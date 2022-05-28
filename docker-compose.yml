@@ -1,0 +1,19 @@
+version: '3.2'
+services:
+  postgres:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "docker_123"
+      POSTGRES_DB: "learning-spring"
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - linkedin-volume:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+volumes:
+  linkedin-volume:
+    external: false
