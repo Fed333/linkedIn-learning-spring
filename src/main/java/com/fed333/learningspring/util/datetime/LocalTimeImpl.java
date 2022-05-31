@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import java.time.LocalTime;
 import java.util.concurrent.TimeUnit;
 
-@Component
+@Component("localTimeComponent")
 @Qualifier("localTimeSingleton")
 public class LocalTimeImpl implements Time{
 
