@@ -1,4 +1,4 @@
-package com.fed333.learningspring.util;
+package com.fed333.learningspring.util.startup;
 
 import com.fed333.learningspring.data.entity.Room;
 import com.fed333.learningspring.data.repo.RoomRepository;

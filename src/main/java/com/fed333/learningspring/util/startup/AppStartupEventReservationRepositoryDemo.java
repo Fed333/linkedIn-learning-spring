@@ -1,4 +1,4 @@
-package com.fed333.learningspring.util;
+package com.fed333.learningspring.util.startup;
 
 import com.fed333.learningspring.data.repo.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
