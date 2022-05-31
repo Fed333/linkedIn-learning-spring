@@ -3,27 +3,26 @@ package com.fed333.learningspring.util.datetime;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalTime;
 import java.util.concurrent.TimeUnit;
 
 @Component
-@Qualifier("localTimeSingleton")
-public class LocalTimeImpl implements Time{
+@Qualifier("sqlTimeSingleton")
+public class SqlTimeImpl implements Time{
 
-    private final LocalTime time = LocalTime.now();
+    private java.sql.Time time = new java.sql.Time(0);
 
     @Override
     public long seconds() {
-        return time.getSecond();
+        return TimeUnit.MILLISECONDS.toSeconds(time.getTime());
     }
 
     @Override
     public long millis() {
-        return TimeUnit.NANOSECONDS.toMillis(time.getNano());
+        return time.getTime();
     }
 
     @Override
     public long nanos() {
-        return time.getNano();
+        return TimeUnit.MILLISECONDS.toNanos(time.getTime());
     }
 }
